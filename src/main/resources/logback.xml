@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %highlight(%-5level) %logger{36}.%M - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger additivity="false" level="DEBUG" name="example">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <logger level="DEBUG" name="com.yahoo.elide.Elide">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <!--<logger additivity="false" level="DEBUG" name="com.yahoo.elide.datastores.hibernate5.porting.SessionWrapper">-->
+        <!--<appender-ref ref="CONSOLE"/>-->
+    <!--</logger>-->
+    <logger additivity="false" level="DEBUG" name="com.yahoo.elide.datastores.jpa.porting.EntityManagerWrapper">
+    <appender-ref ref="CONSOLE"/>
+    </logger>
+    <!--<logger additivity="false" level="DEBUG" name="org.hibernate.SQL">-->
+    <!--<appender-ref ref="CONSOLE"/>-->
+    <!--</logger>-->
+    <!--<logger additivity="false" level="DEBUG" name="org.springframework.security">-->
+    <!--<appender-ref ref="CONSOLE"/>-->
+    <!--</logger>-->
+
+</configuration>

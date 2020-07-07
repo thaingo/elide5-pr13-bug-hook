@@ -40,8 +40,8 @@ public class ExampleTest extends IntegrationTest {
      */
     @Test
     @Sql(statements = {
-            "DELETE FROM ArtifactVersion; DELETE FROM ArtifactProduct; DELETE FROM ArtifactGroup;",
-            "INSERT INTO ArtifactGroup (name, commonName, description) VALUES\n" +
+            "DELETE FROM Change; DELETE FROM ArtifactProduct; DELETE FROM Report;",
+            "INSERT INTO Report (name, commonName, description) VALUES\n" +
                     "\t\t('com.example.repository','Example Repository','The code for this project');"
     })
     void jsonApiGetTest() {
@@ -70,8 +70,8 @@ public class ExampleTest extends IntegrationTest {
 
     @Test
     @Sql(statements = {
-            "DELETE FROM ArtifactVersion; DELETE FROM ArtifactProduct; DELETE FROM ArtifactGroup;",
-            "INSERT INTO ArtifactGroup (name, commonName, description) VALUES\n" +
+            "DELETE FROM Change; DELETE FROM ArtifactProduct; DELETE FROM Report;",
+            "INSERT INTO Report (name, commonName, description) VALUES\n" +
                     "\t\t('com.example.repository','Example Repository','The code for this project');"
     })
     void jsonApiPatchTest() {
@@ -118,7 +118,7 @@ public class ExampleTest extends IntegrationTest {
 
     @Test
     @Sql(statements = {
-            "DELETE FROM ArtifactVersion; DELETE FROM ArtifactProduct; DELETE FROM ArtifactGroup;"
+            "DELETE FROM Change; DELETE FROM ArtifactProduct; DELETE FROM Report;"
     })
     void jsonApiPostTest() {
         given()
@@ -155,8 +155,8 @@ public class ExampleTest extends IntegrationTest {
 
     @Test
     @Sql(statements = {
-            "DELETE FROM ArtifactVersion; DELETE FROM ArtifactProduct; DELETE FROM ArtifactGroup;",
-            "INSERT INTO ArtifactGroup (name, commonName, description) VALUES\n" +
+            "DELETE FROM Change; DELETE FROM ArtifactProduct; DELETE FROM Report;",
+            "INSERT INTO Report (name, commonName, description) VALUES\n" +
                     "\t\t('com.example.repository','Example Repository','The code for this project');"
     })
     void jsonApiDeleteTest() {
@@ -168,8 +168,8 @@ public class ExampleTest extends IntegrationTest {
 
     @Test
     @Sql(statements = {
-            "DELETE FROM ArtifactVersion; DELETE FROM ArtifactProduct; DELETE FROM ArtifactGroup;",
-            "INSERT INTO ArtifactGroup (name, commonName, description) VALUES\n" +
+            "DELETE FROM Change; DELETE FROM ArtifactProduct; DELETE FROM Report;",
+            "INSERT INTO Report (name, commonName, description) VALUES\n" +
                     "\t\t('com.example.repository','Example Repository','The code for this project');",
             "INSERT INTO ArtifactProduct (name, commonName, description, group_name) VALUES\n" +
                     "\t\t('foo','foo Core','The guts of foo','com.example.repository');"
@@ -191,10 +191,10 @@ public class ExampleTest extends IntegrationTest {
      */
     @Test
     @Sql(statements = {
-            "DELETE FROM ArtifactVersion; DELETE FROM ArtifactProduct; DELETE FROM ArtifactGroup;",
-            "INSERT INTO ArtifactGroup (name, commonName, description) VALUES\n" +
+            "DELETE FROM Change; DELETE FROM ArtifactProduct; DELETE FROM Report;",
+            "INSERT INTO Report (name, commonName, description) VALUES\n" +
                     "\t\t('com.example.repository','Example Repository','The code for this project');",
-            "INSERT INTO ArtifactGroup (name, commonName, description) VALUES\n" +
+            "INSERT INTO Report (name, commonName, description) VALUES\n" +
                     "\t\t('com.yahoo.elide','Elide','The magical library powering this project');"
     })
     void graphqlTest() {

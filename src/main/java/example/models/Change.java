@@ -8,18 +8,27 @@ package example.models;
 import com.yahoo.elide.annotation.Include;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.util.Date;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+import lombok.Getter;
+import lombok.Setter;
 
-@Include(type = "version")
+@Include
 @Entity
-public class ArtifactVersion {
-    @Id
-    private String name = "";
+@Setter
+@Getter
+public class Change {
 
+    @Id
+    private Long id;
+    private String name = "Change";
     private Date createdAt = new Date();
 
-    @ManyToOne
-    private ArtifactProduct artifact;
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
+    private Report report;
 }

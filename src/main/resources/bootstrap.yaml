@@ -7,6 +7,3 @@
 spring:
   application:
     name: Elide
-
-logging:
-  path: /tmp
