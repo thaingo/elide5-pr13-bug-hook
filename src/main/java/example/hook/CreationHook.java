@@ -19,6 +19,8 @@ public class CreationHook implements LifeCycleHook<Report> {
         Change change = new Change();
         change.setReport(report);
 
+        report.setChange(change);
+
         log.debug("Created Change entity at {} with id {} and ", change.getCreatedAt(), change.getId());
     }
 }
